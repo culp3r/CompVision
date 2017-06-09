@@ -1,4 +1,0 @@
-Learning git...33%
-Learning git...53% #added ssh keys to knowledge 
-Learning git...73% #added creating branches and pushing to knowlegde
-
