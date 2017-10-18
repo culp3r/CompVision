@@ -1,18 +1,19 @@
+#vision processing libraries
 import cv2
 import numpy as np
-
+#networking library
 from networktables import NetworkTables as nt
 import logging
-
 import time
-#NetworkTable setup:
+
 f = open('log.txt', 'w')
+#NetworkTable setup:
 logging.basicConfig(level = logging.DEBUG)
 nt.initialize(server = '10.17.81.2')
 sd = nt.getTable('SmartDashboard')
 
 #where the video feed comes from:
-vidFeed = cv2.VideoCapture(1)
+vidFeed = cv2.VideoCapture(0)
 
 #changing resolution; width 320 & height 240
 vidFeed.set(3, 320);
@@ -74,7 +75,7 @@ while True:
 
     #define threshold for the color we're looking for
     #hue 45-80 from testing----!!!!!!!!!!--------
-    greenMin = np.array([50, 20, 30], dtype=np.uint8)
+    greenMin = np.array([50, 90, 100], dtype=np.uint8)
     greenMax = np.array([80, 255, 255], dtype=np.uint8)
 
     #filter colors not in range of threshold out and convert to binary image

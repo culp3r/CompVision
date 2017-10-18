@@ -12,7 +12,7 @@ nt.initialize(server = '10.17.81.2')
 sd = nt.getTable('SmartDashboard')
 
 #where the video feed comes from:
-vidFeed = cv2.VideoCapture(1)
+vidFeed = cv2.VideoCapture(0)
 
 #changing resolution; width 320 & height 240
 vidFeed.set(3, 320);
